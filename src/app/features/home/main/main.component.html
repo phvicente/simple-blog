@@ -1,0 +1,44 @@
+<main class="articles-container">
+
+  <article class="main-article">
+    <a
+      [routerLink]="['/artigo', articles[0].id]"
+      class="article-link">
+      <figure>
+        <img
+          [src]="articles[0].imageUrl"
+          alt="{{ articles[0].title }}"
+          loading="lazy"
+        />
+        <figcaption>{{ articles[0].title }}</figcaption>
+      </figure>
+      <div class="article-summary">
+        <p>{{ articles[0].summary }}</p>
+      </div>
+    </a>
+  </article>
+
+
+  <section class="secondary-articles">
+    <article
+      class="secondary-article-item"
+      *ngFor="let article of articles.slice(1); let i = index"
+    >
+      <a
+        [routerLink]="['/artigo', article.id]"
+        class="article-link">
+        <figure>
+          <img
+            [src]="article.imageUrl"
+            alt="{{ article.title }}"
+            loading="lazy"
+          />
+          <figcaption>{{ article.title }}</figcaption>
+        </figure>
+        <div class="article-summary">
+          <p>{{ article.summary }}</p>
+        </div>
+      </a>
+    </article>
+  </section>
+</main>

@@ -1,0 +1,17 @@
+<article class="article-detail">
+  <button class="back-button" (click)="goBack()">
+    &larr; Voltar
+  </button>
+  <h1>{{ article?.title }}</h1>
+  <figure>
+    <img
+      [src]="article?.imageUrl"
+      alt="{{ article?.title }}"
+      loading="lazy"
+    />
+    <figcaption>{{ article?.title }}</figcaption>
+  </figure>
+  <div class="article-content">
+    <markdown [data]="article?.content"></markdown>
+  </div>
+</article>
